@@ -2,8 +2,11 @@ package ca.skrundz.buzzerapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 public class mainActivity extends AppCompatActivity {
 
@@ -33,5 +36,13 @@ public class mainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onPlayAlone(View button) {
+        Log.i("", "2");
+    }
+
+    public void onPlayWithFriends(View button) {
+        Log.i("", "2");
     }
 }
