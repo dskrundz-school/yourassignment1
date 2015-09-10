@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class SinglePlayerActivity extends AppCompatActivity {
-	Handler timingHandler = new Handler();
+	private Handler timingHandler = new Handler();
 	private Runnable startGameRunnable = null;
 	private Runnable gameTriggerRunnable = null;
 
