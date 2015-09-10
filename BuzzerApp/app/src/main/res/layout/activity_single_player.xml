@@ -6,4 +6,63 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="ca.skrundz.buzzerapp.SinglePlayerActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Tap on Green"
+        android:visibility="gone"
+        android:gravity="center"
+        android:id="@+id/tapGreenText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/androidImageView"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/android_red"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tapGreenText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Wait for Red"
+        android:visibility="visible"
+        android:id="@+id/waitForRed"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restart"
+        android:id="@+id/restartButton"
+        android:visibility="gone"
+        android:layout_below="@+id/space"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="You took %.2f seconds"
+        android:id="@+id/scoreTextView"
+        android:visibility="gone"
+        android:layout_above="@+id/space"
+        android:layout_centerHorizontal="true" />
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="20px"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/space" />
+
 </RelativeLayout>

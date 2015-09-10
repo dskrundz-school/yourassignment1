@@ -9,22 +9,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/single_player"
-        android:id="@+id/button"
+        android:id="@+id/playAloneButton"
         android:textAllCaps="false"
+        android:onClick="onPlayAlone"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onPlayAlone" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/multi_player"
-        android:id="@+id/button2"
+        android:id="@+id/playWithFriendsButton"
         android:textAllCaps="false"
-        android:layout_below="@+id/button"
+        android:onClick="onPlayWithFriends"
+        android:layout_below="@+id/playAloneButton"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="onPlayWithFriends" />
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stats"
+        android:id="@+id/statsButton"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onViewStats"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

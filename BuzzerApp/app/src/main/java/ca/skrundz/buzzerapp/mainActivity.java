@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
 		this.startActivity(intent);
 	}
 
+	public void onViewStats(View button) {
+		Intent intent = new Intent(this, StatusActivity.class);
+		this.startActivity(intent);
+	}
+
 	/*
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

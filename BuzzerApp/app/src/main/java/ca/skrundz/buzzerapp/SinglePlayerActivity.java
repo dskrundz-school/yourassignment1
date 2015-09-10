@@ -6,24 +6,57 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
+import java.util.Timer;
+import java.util.logging.Handler;
 
 public class SinglePlayerActivity extends AppCompatActivity {
-	
+
+//	private Handler timingHandler = new Handler();
+	private Runnable startGameRunnable = null;
+	private Runnable gameTriggerRunnable = null;
+
+	private GameManager game = null;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_single_player);
+
+		this.game = new GameManager(
+				                           (ImageView)this.findViewById(R.id.androidImageView),
+				                           (TextView)this.findViewById(R.id.waitForRed),
+				                           (TextView)this.findViewById(R.id.tapGreenText),
+				                           (TextView)this.findViewById(R.id.scoreTextView),
+				                           (Button)this.findViewById(R.id.restartButton)
+		);
+
+//		this.startGameRunnable = new Runnable() {
+//			@Override
+//			public void run() {
+				// Show the stuff
+//				waitForRed.setVisibility(View.GONE);
+//				pressGreen.setVisibility(View.VISIBLE);
+//				androidImage.setImageResource(R.drawable.android_red);
+//				androidImage.setVisibility(View.GONE);
+				// Prepare the next timer
+//			}
+//		}
 	}
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-//		return super.onTouchEvent(event);
-
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			Log.i("", "Tap");
+//			this.androidImage.setImageResource(R.drawable.android_green);
+			return true;
 		}
-
-		return true;
+		return false;
 	}
 
 	/*
