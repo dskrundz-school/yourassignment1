@@ -11,11 +11,16 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MultiplayerGameActivity extends AppCompatActivity {
+	private LinearLayout topLayout = null;
+	private LinearLayout bottomLayout = null;
+
 	private ImageView player1ImageView = null;
 	private ImageView player2ImageView = null;
 	private ImageView player3ImageView = null;
@@ -32,6 +37,9 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_multiplayer_game);
+
+		this.topLayout = (LinearLayout)this.findViewById(R.id.topLayout);
+		this.bottomLayout = (LinearLayout)this.findViewById(R.id.bottomLayout);
 
 		this.player1ImageView = (ImageView)this.findViewById(R.id.player1Image);
 		this.player2ImageView = (ImageView)this.findViewById(R.id.player2Image);
@@ -79,9 +87,15 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 
 	private void startGame() {
 		this.gameRunning = true;
+
+		this.topLayout.setVisibility(View.VISIBLE);
+		this.bottomLayout.setVisibility(View.VISIBLE);
 	}
 
 	private void endGame() {
 		this.gameRunning = false;
+
+		this.topLayout.setVisibility(View.GONE);
+		this.bottomLayout.setVisibility(View.GONE);
 	}
 }

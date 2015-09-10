@@ -14,6 +14,8 @@
         android:layout_width="match_parent"
         android:layout_weight="0.5"
         android:layout_height="wrap_content"
+        android:id="@+id/topLayout"
+        android:visibility="gone"
         android:layout_gravity="center_horizontal">
 
         <ImageView
@@ -30,6 +32,7 @@
             android:id="@+id/player4Image"
             android:layout_weight="0.5"
             android:src="@drawable/plus4"
+
             android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
@@ -38,6 +41,8 @@
         android:layout_weight="0.5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/bottomLayout"
+        android:visibility="gone"
         android:layout_gravity="center_horizontal">
 
         <ImageView
