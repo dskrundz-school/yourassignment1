@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MultiplayerActivity extends AppCompatActivity {
-	
+public class StatusActivity extends AppCompatActivity {
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		this.setContentView(R.layout.activity_multiplayer);
+		this.setContentView(R.layout.activity_status);
 	}
 }
