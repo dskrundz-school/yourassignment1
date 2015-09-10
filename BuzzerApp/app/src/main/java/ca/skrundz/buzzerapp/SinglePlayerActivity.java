@@ -1,8 +1,8 @@
 package ca.skrundz.buzzerapp;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 import java.util.Random;
 
 public class SinglePlayerActivity extends AppCompatActivity {
-
 	Handler timingHandler = new Handler();
 	private Runnable startGameRunnable = null;
 	private Runnable gameTriggerRunnable = null;
