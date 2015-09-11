@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+/*
+Manages the UI and the Game object for the single player game
+ */
 public class SinglePlayerActivity extends AppCompatActivity {
 	private Handler timingHandler = new Handler();
 	private Runnable startGameRunnable = null;

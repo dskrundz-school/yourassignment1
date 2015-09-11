@@ -11,6 +11,9 @@ import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Manages the state of the multiplayer activity
+ */
 public class MultiplayerGameActivity extends AppCompatActivity {
 	private ImageView player1ImageView = null;
 	private ImageView player2ImageView = null;

@@ -8,6 +8,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+Manages the game state for the single player game
+ */
 public class GameManager {
 	private ImageView androidImage;
 	private TextView waitForRed;
