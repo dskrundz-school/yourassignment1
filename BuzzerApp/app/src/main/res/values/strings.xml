@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BuzzerApp</string>
+    <string name="app_name">dskrundz-reflex</string>
     <string name="title_activity_single_player">SinglePlayerActivity</string>
     <string name="title_activity_multiplayer">MultiplayerActivity</string>
     <string name="title_activity_multiplayer_game">MultiplayerGameActivity</string>
