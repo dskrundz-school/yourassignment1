@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">dskrundz-reflex</string>
-    <string name="title_activity_single_player">SinglePlayerActivity</string>
-    <string name="title_activity_multiplayer">MultiplayerActivity</string>
-    <string name="title_activity_multiplayer_game">MultiplayerGameActivity</string>
-    <string name="title_activity_status">StatusActivity</string>
+    <string name="title_activity_single_player">Singleplayer</string>
+    <string name="title_activity_multiplayer">Multiplayer</string>
+    <string name="title_activity_multiplayer_game">Players</string>
+    <string name="title_activity_status">Stats</string>
 
     <string name="single_player">Play alone :(</string>
     <string name="multi_player">Play with friends!</string>
@@ -14,4 +14,17 @@
     <string name="numPeople4">4 Players</string>
 
     <string name="playerCount">Number of Players</string>
+
+    <string name="infoString0">Some info here</string>
+    <string name="infoString1"></string>
+    <string name="infoString2"></string>
+    <string name="infoString3"></string>
+    <string name="infoString4"></string>
+    <string name="infoString5"></string>
+    <string name="infoString6"></string>
+    <string name="infoString7"></string>
+    <string name="infoString8"></string>
+    <string name="infoString9"></string>
+    <string name="infoString10"></string>
+
 </resources>

@@ -10,6 +10,8 @@ import java.util.List;
 
 /*
 Manages the game state for the single player game
+
+It is better to move theses 100 lines out of the controller to make the code more readable
  */
 public class GameManager {
 	private ImageView androidImage;
