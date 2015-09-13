@@ -7,6 +7,7 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -68,23 +69,19 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 			Point tapPoint = new Point((int) event.getX(), (int) event.getY());
 			if (this.viewContainsPoint(this.player1ImageView, tapPoint)) {
 				if (!this.playersHit.contains(0)) {
-					this.playersHit.add(0);
-					this.startGame();
+					this.startGame(0);
 				}
 			} else if (this.viewContainsPoint(this.player2ImageView, tapPoint)) {
 				if (!this.playersHit.contains(1)) {
-					this.playersHit.add(1);
-					this.startGame();
+					this.startGame(1);
 				}
 			} else if (this.viewContainsPoint(this.player3ImageView, tapPoint)) {
 				if (!this.playersHit.contains(2)) {
-					this.playersHit.add(2);
-					this.startGame();
+					this.startGame(2);
 				}
 			} else if (this.viewContainsPoint(this.player4ImageView, tapPoint)) {
 				if (!this.playersHit.contains(3)) {
-					this.playersHit.add(3);
-					this.startGame();
+					this.startGame(3);
 				}
 			}
 
@@ -98,7 +95,11 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 		return false;
 	}
 
-	private void startGame() {
+	private void startGame(Integer playerNumber) {
+		this.playersHit.add(playerNumber);
+
+		DataCenter.sharedDataCenter().multiplayerBuzzes[this.playerCount-2][playerNumber] += 1;
+
 		if (!this.gameRunning) {
 			this.gameRunning = true;
 

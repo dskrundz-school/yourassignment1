@@ -45,7 +45,6 @@ public class GameManager {
 	}
 
 	private long startTime = 0;
-	private List<Double> pastTimes = new ArrayList<>();
 
 	public void preStartGame() {
 		this.androidImage.setVisibility(View.VISIBLE);
@@ -86,7 +85,7 @@ public class GameManager {
 
 		long deltaTimeNS = System.nanoTime() - this.startTime;
 		Double deltaTimeS = deltaTimeNS / 1000000000.0;
-		this.pastTimes.add(deltaTimeS);
+		DataCenter.sharedDataCenter().singlePlayerTimes.add(deltaTimeS);
 		String resultString = String.format("You took %.2f seconds", deltaTimeS);
 		this.resultView.setText(resultString.toCharArray(), 0, resultString.length());
 
