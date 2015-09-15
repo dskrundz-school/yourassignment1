@@ -1,5 +1,8 @@
 package ca.skrundz.buzzerapp;
 
+import android.content.Context;
+
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,11 +35,15 @@ public class DataCenter {
 		return instance;
 	}
 
-	protected DataCenter() {
+	private static final String FileName = "Stats.bin";
+
+	protected DataCenter() {}
+
+	public void load(Context context) {
 		// TODO: Load
 	}
 
-	public void save() {
+	public void save(Context context) {
 		// TODO: Save
 	}
 }

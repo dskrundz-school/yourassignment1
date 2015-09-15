@@ -15,16 +15,25 @@
 
     <string name="playerCount">Number of Players</string>
 
-    <string name="statusLabel00">Single Player</string>
-
-    <string name="statusLabel20">Minimum</string>
-    <string name="statusLabel30">Maximum</string>
-    <string name="statusLabel40">Average</string>
-    <string name="statusLabel50">Median</string>
-
-    <string name="statusLabel12">Last 10</string>
-    <string name="statusLabel14">Last 100</string>
-    <string name="statusLabel16">All Time</string>
-
+    <string name="statusLabel00">Reaction</string>
+    <string name="statusLabel20">Minimum </string>
+    <string name="statusLabel30">Maximum </string>
+    <string name="statusLabel40">Average </string>
+    <string name="statusLabel50">Median </string>
+    <string name="statusLabel12"> Last 10 </string>
+    <string name="statusLabel14"> Last 100 </string>
+    <string name="statusLabel16"> All Time </string>
     <string name="statusLabelPipe">|</string>
+
+    <string name="statusLabel70">Buzzer</string>
+
+    <string name="statusLabelPlayer1">Player 1</string>
+    <string name="statusLabelPlayer2">Player 2</string>
+    <string name="statusLabelPlayer3">Player 3</string>
+    <string name="statusLabelPlayer4">Player 4</string>
+    <string name="statusLabelPlayers2">2 Players</string>
+    <string name="statusLabelPlayers3">3 Players</string>
+    <string name="statusLabelPlayers4">4 Players</string>
+    <string name="statusLabelB">Buzzes</string>
+    <string name="statusLabelW">Wins</string>
 </resources>

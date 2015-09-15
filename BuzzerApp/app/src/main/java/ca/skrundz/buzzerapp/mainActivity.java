@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.activity_main);
+
+		DataCenter.sharedDataCenter().load(this);
 	}
 
 	public void onPlayAlone(View button) {

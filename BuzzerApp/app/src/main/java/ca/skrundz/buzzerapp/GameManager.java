@@ -1,5 +1,6 @@
 package ca.skrundz.buzzerapp;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -70,7 +71,7 @@ public class GameManager {
 		this.startTime = System.nanoTime();
 	}
 
-	public boolean stopGame() {
+	public boolean stopGame(Context context) {
 		this.androidImage.setVisibility(View.GONE);
 		this.waitForRed.setVisibility(View.GONE);
 		this.pressGreen.setVisibility(View.GONE);
@@ -87,7 +88,7 @@ public class GameManager {
 		Double deltaTimeS = deltaTimeNS / 1000000000.0;
 
 		DataCenter.sharedDataCenter().singlePlayerTimes.add(deltaTimeS);
-		DataCenter.sharedDataCenter().save();
+		DataCenter.sharedDataCenter().save(context);
 
 		String resultString = String.format("You took %.2f seconds", deltaTimeS);
 		this.resultView.setText(resultString.toCharArray(), 0, resultString.length());

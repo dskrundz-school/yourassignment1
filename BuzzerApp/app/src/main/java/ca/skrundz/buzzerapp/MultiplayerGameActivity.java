@@ -116,7 +116,7 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 		this.gameRunning = false;
 
 		DataCenter.sharedDataCenter().multiplayerWins[this.playerCount-2][this.playersHit.get(0)] += 1;
-		DataCenter.sharedDataCenter().save();
+		DataCenter.sharedDataCenter().save(this);
 
 		String alertTitle = "1. " + MultiplayerGameActivity.names[this.playersHit.remove(0)];
 		String alertMessage = "";

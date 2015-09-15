@@ -57,7 +57,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		if (event.getAction() == MotionEvent.ACTION_DOWN) {
-			if (!this.game.stopGame()) {
+			if (!this.game.stopGame(this)) {
 				this.timingHandler.removeCallbacksAndMessages(null);
 			}
 			return true;
