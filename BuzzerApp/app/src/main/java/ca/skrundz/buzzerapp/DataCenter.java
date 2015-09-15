@@ -58,23 +58,7 @@ public class DataCenter {
 			this.singlePlayerTimes = (List<Double>) in.readObject();
 			this.multiplayerBuzzes = (int[][]) in.readObject();
 			this.multiplayerWins = (int[][]) in.readObject();
-		} catch (Exception e) {
-			// Do nothing
-		}
-
-		/* catch (FileNotFoundException e) {
-			// Do nothing
-			Log.e("", e.getStackTrace().toString());
-			throw new RuntimeException(e);
-		} catch (IOException e) {
-			// Do nothing
-			Log.e("", e.getStackTrace().toString());
-			throw new RuntimeException(e);
-		} catch (ClassNotFoundException e) {
-			// Do nothing
-			Log.e("", e.getStackTrace().toString());
-			throw new RuntimeException(e);
-		}*/
+		} catch (Exception e) {}
 	}
 
 	public void save(Context context) {
