@@ -18,12 +18,25 @@ public class DataCenter {
 
 	};
 
-	protected DataCenter() {}
+	public int[][] multiplayerWins = {
+			                                 {0, 0},
+			                                 {0, 0, 0},
+			                                 {0, 0, 0, 0}
+
+	};
 
 	public static DataCenter sharedDataCenter() {
 		if(instance == null) {
 			instance = new DataCenter();
 		}
 		return instance;
+	}
+
+	protected DataCenter() {
+		// TODO: Load
+	}
+
+	public void save() {
+		// TODO: Save
 	}
 }

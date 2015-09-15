@@ -85,7 +85,10 @@ public class GameManager {
 
 		long deltaTimeNS = System.nanoTime() - this.startTime;
 		Double deltaTimeS = deltaTimeNS / 1000000000.0;
+
 		DataCenter.sharedDataCenter().singlePlayerTimes.add(deltaTimeS);
+		DataCenter.sharedDataCenter().save();
+
 		String resultString = String.format("You took %.2f seconds", deltaTimeS);
 		this.resultView.setText(resultString.toCharArray(), 0, resultString.length());
 

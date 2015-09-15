@@ -15,16 +15,16 @@
 
     <string name="playerCount">Number of Players</string>
 
-    <string name="infoString0">Some info here</string>
-    <string name="infoString1"></string>
-    <string name="infoString2"></string>
-    <string name="infoString3"></string>
-    <string name="infoString4"></string>
-    <string name="infoString5"></string>
-    <string name="infoString6"></string>
-    <string name="infoString7"></string>
-    <string name="infoString8"></string>
-    <string name="infoString9"></string>
-    <string name="infoString10"></string>
+    <string name="statusLabel00">Single Player</string>
 
+    <string name="statusLabel20">Minimum</string>
+    <string name="statusLabel30">Maximum</string>
+    <string name="statusLabel40">Average</string>
+    <string name="statusLabel50">Median</string>
+
+    <string name="statusLabel12">Last 10</string>
+    <string name="statusLabel14">Last 100</string>
+    <string name="statusLabel16">All Time</string>
+
+    <string name="statusLabelPipe">|</string>
 </resources>

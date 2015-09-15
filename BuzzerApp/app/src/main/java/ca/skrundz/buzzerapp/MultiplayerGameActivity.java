@@ -14,6 +14,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.xml.sax.DTDHandler;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,6 +114,9 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 	private void endGame() {
 		this.timingHandler.removeCallbacksAndMessages(null);
 		this.gameRunning = false;
+
+		DataCenter.sharedDataCenter().multiplayerWins[this.playerCount-2][this.playersHit.get(0)] += 1;
+		DataCenter.sharedDataCenter().save();
 
 		String alertTitle = "1. " + MultiplayerGameActivity.names[this.playersHit.remove(0)];
 		String alertMessage = "";
