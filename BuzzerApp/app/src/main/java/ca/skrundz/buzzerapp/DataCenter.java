@@ -1,6 +1,7 @@
 package ca.skrundz.buzzerapp;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -42,8 +43,7 @@ public class DataCenter {
 
 	private static final String FileName = "Stats.bin";
 
-	protected DataCenter() {
-	}
+	private DataCenter() {}
 
 	public void reset(Context context) {
 		context.deleteFile(FileName);
@@ -62,10 +62,12 @@ public class DataCenter {
 			e.printStackTrace();
 		} catch (IOException e) {
 			// Do nothing
-			e.printStackTrace();
+			Log.e("", e.getStackTrace().toString());
+			throw new RuntimeException(e);
 		} catch (ClassNotFoundException e) {
 			// Do nothing
-			e.printStackTrace();
+			Log.e("", e.getStackTrace().toString());
+			throw new RuntimeException(e);
 		}
 	}
 
@@ -80,10 +82,12 @@ public class DataCenter {
 			out.close();
 		} catch (FileNotFoundException e) {
 			// Do nothing
-			e.printStackTrace();
+			Log.e("", e.getStackTrace().toString());
+			throw new RuntimeException(e);
 		} catch (IOException e) {
 			// Do nothing
-			e.printStackTrace();
+			Log.e("", e.getStackTrace().toString());
+			throw new RuntimeException(e);
 		}
 	}
 }

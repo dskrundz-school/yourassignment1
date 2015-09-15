@@ -1,8 +1,11 @@
 package ca.skrundz.buzzerapp;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -165,8 +168,26 @@ public class StatusActivity extends AppCompatActivity {
 			}
 			List<Double> newList = new ArrayList<>();
 			newList.add(list.get(list.size() / 2));
-			newList.add(list.get(list.size() / 2 + 1));
+			newList.add(list.get(list.size() / 2 - 1));
 			return this.average(newList);
 		}
 	}
+//
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu
+//		this.getMenuInflater().inflate(R.menu.menu_status, menu);
+//		return true;
+//	}
+//
+//	@Override
+//	public boolean onOptionsItemSelected(MenuItem item) {
+//		int id = item.getItemId();
+//
+//		//if (id == R.id.clearStats) {
+//		//	DataCenter.sharedDataCenter().reset(this);
+//		//}
+//
+//		return super.onOptionsItemSelected(item);
+//	}
 }

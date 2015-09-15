@@ -36,4 +36,6 @@
     <string name="statusLabelPlayers4">4 Players</string>
     <string name="statusLabelB">Buzzes</string>
     <string name="statusLabelW">Wins</string>
+
+    <string name="clearStats">Clear</string>
 </resources>

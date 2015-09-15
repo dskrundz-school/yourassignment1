@@ -3,4 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ca.skrundz.buzzerapp.StatusActivity">
 
+    <item
+        android:id="@+id/clearStats"
+        android:title="@string/clearStats"
+        />
+
 </menu>
