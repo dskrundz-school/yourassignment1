@@ -38,4 +38,5 @@
     <string name="statusLabelW">Wins</string>
 
     <string name="clearStats">Clear</string>
+    <string name="emailStats">Email</string>
 </resources>

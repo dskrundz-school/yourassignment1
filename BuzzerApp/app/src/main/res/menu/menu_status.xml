@@ -4,6 +4,11 @@
     tools:context="ca.skrundz.buzzerapp.StatusActivity">
 
     <item
+        android:id="@+id/emailStats"
+        android:title="@string/emailStats"
+        />
+
+    <item
         android:id="@+id/clearStats"
         android:title="@string/clearStats"
         />

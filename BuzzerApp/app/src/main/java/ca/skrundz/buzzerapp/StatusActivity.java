@@ -1,5 +1,7 @@
 package ca.skrundz.buzzerapp;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +9,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -172,22 +177,92 @@ public class StatusActivity extends AppCompatActivity {
 			return this.average(newList);
 		}
 	}
-//
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-//		// Inflate the menu
-//		this.getMenuInflater().inflate(R.menu.menu_status, menu);
-//		return true;
-//	}
-//
-//	@Override
-//	public boolean onOptionsItemSelected(MenuItem item) {
-//		int id = item.getItemId();
-//
-//		//if (id == R.id.clearStats) {
-//		//	DataCenter.sharedDataCenter().reset(this);
-//		//}
-//
-//		return super.onOptionsItemSelected(item);
-//	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu
+		this.getMenuInflater().inflate(R.menu.menu_status, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+
+		if (id == R.id.clearStats) {
+			DataCenter.sharedDataCenter().reset(this);
+			Intent intent = new Intent(this, StatusActivity.class);
+			this.startActivity(intent);
+			this.finish();
+		} else if (id == R.id.emailStats) {
+			String statsText = "";
+
+			statsText += "Minimum:\n";
+			statsText += "\tLast 10: " + ((TextView)this.findViewById(R.id.MinimumLast10)).getText() + "\n";
+			statsText += "\tLast 100: " + ((TextView)this.findViewById(R.id.MinimumLast100)).getText() + "\n";
+			statsText += "\tAll Time: " + ((TextView)this.findViewById(R.id.MinimumAllTime)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "Maximum:\n";
+			statsText += "\tLast 10: " + ((TextView)this.findViewById(R.id.MaximumLast10)).getText() + "\n";
+			statsText += "\tLast 100: " + ((TextView)this.findViewById(R.id.MaximumLast100)).getText() + "\n";
+			statsText += "\tAll Time: " + ((TextView)this.findViewById(R.id.MaximumAllTime)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "Average:\n";
+			statsText += "\tLast 10: " + ((TextView)this.findViewById(R.id.AverageLast10)).getText() + "\n";
+			statsText += "\tLast 100: " + ((TextView)this.findViewById(R.id.AverageLast100)).getText() + "\n";
+			statsText += "\tAll Time: " + ((TextView)this.findViewById(R.id.AverageAllTime)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "Median:\n";
+			statsText += "\tLast 10: " + ((TextView)this.findViewById(R.id.MedianLast10)).getText() + "\n";
+			statsText += "\tLast 100: " + ((TextView)this.findViewById(R.id.MedianLast100)).getText() + "\n";
+			statsText += "\tAll Time: " + ((TextView)this.findViewById(R.id.MedianAllTime)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "\n";
+			statsText += "\n";
+
+			statsText += "2 Player:\n";
+			statsText += "\tPlayer 1 Buzzes: " + ((TextView)this.findViewById(R.id.m2p1b)).getText() + "\n";
+			statsText += "\tPlayer 1 Wins: " + ((TextView)this.findViewById(R.id.m2p1w)).getText() + "\n";
+			statsText += "\tPlayer 2 Buzzes: " + ((TextView)this.findViewById(R.id.m2p2b)).getText() + "\n";
+			statsText += "\tPlayer 2 Wins: " + ((TextView)this.findViewById(R.id.m2p2w)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "2 Player:\n";
+			statsText += "\tPlayer 1 Buzzes: " + ((TextView)this.findViewById(R.id.m3p1b)).getText() + "\n";
+			statsText += "\tPlayer 1 Wins: " + ((TextView)this.findViewById(R.id.m3p1w)).getText() + "\n";
+			statsText += "\tPlayer 2 Buzzes: " + ((TextView)this.findViewById(R.id.m3p2b)).getText() + "\n";
+			statsText += "\tPlayer 2 Wins: " + ((TextView)this.findViewById(R.id.m3p2w)).getText() + "\n";
+			statsText += "\tPlayer 3 Buzzes: " + ((TextView)this.findViewById(R.id.m3p3b)).getText() + "\n";
+			statsText += "\tPlayer 3 Wins: " + ((TextView)this.findViewById(R.id.m3p3w)).getText() + "\n";
+			statsText += "\n";
+
+			statsText += "2 Player:\n";
+			statsText += "\tPlayer 1 Buzzes: " + ((TextView)this.findViewById(R.id.m4p1b)).getText() + "\n";
+			statsText += "\tPlayer 1 Wins: " + ((TextView)this.findViewById(R.id.m4p1w)).getText() + "\n";
+			statsText += "\tPlayer 2 Buzzes: " + ((TextView)this.findViewById(R.id.m4p2b)).getText() + "\n";
+			statsText += "\tPlayer 2 Wins: " + ((TextView)this.findViewById(R.id.m4p2w)).getText() + "\n";
+			statsText += "\tPlayer 3 Buzzes: " + ((TextView)this.findViewById(R.id.m4p3b)).getText() + "\n";
+			statsText += "\tPlayer 3 Wins: " + ((TextView)this.findViewById(R.id.m4p3w)).getText() + "\n";
+			statsText += "\tPlayer 4 Buzzes: " + ((TextView)this.findViewById(R.id.m4p4b)).getText() + "\n";
+			statsText += "\tPlayer 4 Wins: " + ((TextView)this.findViewById(R.id.m4p4w)).getText() + "\n";
+
+			// http://stackoverflow.com/a/2197841/393009
+			Intent intent = new Intent(Intent.ACTION_SEND);
+			intent.setType("message/rfc822");
+			intent.putExtra(Intent.EXTRA_EMAIL, "");
+			intent.putExtra(Intent.EXTRA_SUBJECT, "Reflex Stats");
+			intent.putExtra(Intent.EXTRA_TEXT, statsText);
+			try {
+				this.startActivity(Intent.createChooser(intent, "Send mail..."));
+			} catch (ActivityNotFoundException e) {
+				Toast.makeText(this, "There are no email clients installed.", Toast.LENGTH_SHORT).show();
+			}
+		}
+
+		return super.onOptionsItemSelected(item);
+	}
 }

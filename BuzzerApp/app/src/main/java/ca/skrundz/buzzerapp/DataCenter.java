@@ -43,7 +43,8 @@ public class DataCenter {
 
 	private static final String FileName = "Stats.bin";
 
-	private DataCenter() {}
+	private DataCenter() {
+	}
 
 	public void reset(Context context) {
 		context.deleteFile(FileName);
@@ -57,9 +58,14 @@ public class DataCenter {
 			this.singlePlayerTimes = (List<Double>) in.readObject();
 			this.multiplayerBuzzes = (int[][]) in.readObject();
 			this.multiplayerWins = (int[][]) in.readObject();
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// Do nothing
-			e.printStackTrace();
+		}
+
+		/* catch (FileNotFoundException e) {
+			// Do nothing
+			Log.e("", e.getStackTrace().toString());
+			throw new RuntimeException(e);
 		} catch (IOException e) {
 			// Do nothing
 			Log.e("", e.getStackTrace().toString());
@@ -68,7 +74,7 @@ public class DataCenter {
 			// Do nothing
 			Log.e("", e.getStackTrace().toString());
 			throw new RuntimeException(e);
-		}
+		}*/
 	}
 
 	public void save(Context context) {
