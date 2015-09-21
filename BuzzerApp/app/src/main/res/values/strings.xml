@@ -27,10 +27,10 @@
 
     <string name="statusLabel70">Buzzer</string>
 
-    <string name="statusLabelPlayer1">Player 1</string>
-    <string name="statusLabelPlayer2">Player 2</string>
-    <string name="statusLabelPlayer3">Player 3</string>
-    <string name="statusLabelPlayer4">Player 4</string>
+    <string name="statusLabelPlayer1">Canada</string>
+    <string name="statusLabelPlayer2">Britain</string>
+    <string name="statusLabelPlayer3">France</string>
+    <string name="statusLabelPlayer4">Alberta</string>
     <string name="statusLabelPlayers2">2 Players</string>
     <string name="statusLabelPlayers3">3 Players</string>
     <string name="statusLabelPlayers4">4 Players</string>

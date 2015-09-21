@@ -156,6 +156,9 @@ public class StatusActivity extends AppCompatActivity {
 	}
 
 	private Double average(List<Double> list) {
+		if (list.size() == 0) {
+			return 0.0;
+		}
 		Double sum = 0.0;
 		for (Double d : list) {
 			sum += d;
