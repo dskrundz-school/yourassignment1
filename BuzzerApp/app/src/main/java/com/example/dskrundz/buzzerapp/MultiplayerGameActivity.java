@@ -1,5 +1,6 @@
 package com.example.dskrundz.buzzerapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -7,14 +8,9 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
-
-import org.xml.sax.DTDHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +18,7 @@ import java.util.List;
 /*
 Manages the state of the multiplayer activity
  */
-public class MultiplayerGameActivity extends AppCompatActivity {
+public class MultiplayerGameActivity extends Activity {
 	private ImageView player1ImageView = null;
 	private ImageView player2ImageView = null;
 	private ImageView player3ImageView = null;
@@ -100,7 +96,7 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 	private void startGame(Integer playerNumber) {
 		this.playersHit.add(playerNumber);
 
-		DataCenter.sharedDataCenter().multiplayerBuzzes[this.playerCount-2][playerNumber] += 1;
+		DataCenter.sharedDataCenter().multiplayerBuzzes[this.playerCount - 2][playerNumber] += 1;
 
 		if (!this.gameRunning) {
 			this.gameRunning = true;
@@ -115,7 +111,7 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 		this.timingHandler.removeCallbacksAndMessages(null);
 		this.gameRunning = false;
 
-		DataCenter.sharedDataCenter().multiplayerWins[this.playerCount-2][this.playersHit.get(0)] += 1;
+		DataCenter.sharedDataCenter().multiplayerWins[this.playerCount - 2][this.playersHit.get(0)] += 1;
 		DataCenter.sharedDataCenter().save(this);
 
 		String alertTitle = "1. " + MultiplayerGameActivity.names[this.playersHit.remove(0)];
@@ -140,7 +136,7 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 	private boolean viewContainsPoint(View view, Point point) {
 		int[] viewOrigin = new int[2];
 		view.getLocationOnScreen(viewOrigin);
-		Rect viewFrame = new Rect(viewOrigin[0], viewOrigin[1], viewOrigin[0]+view.getWidth(), viewOrigin[1]+view.getHeight());
+		Rect viewFrame = new Rect(viewOrigin[0], viewOrigin[1], viewOrigin[0] + view.getWidth(), viewOrigin[1] + view.getHeight());
 		return viewFrame.contains(point.x, point.y);
 	}
 }

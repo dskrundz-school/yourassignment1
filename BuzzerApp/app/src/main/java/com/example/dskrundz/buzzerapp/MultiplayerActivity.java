@@ -1,14 +1,14 @@
 package com.example.dskrundz.buzzerapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /*
 Allows the user to choose how many players will be playing and notifies the next screen about the choice
  */
-public class MultiplayerActivity extends AppCompatActivity {
+public class MultiplayerActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

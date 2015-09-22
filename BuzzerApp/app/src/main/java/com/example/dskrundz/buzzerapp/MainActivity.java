@@ -1,14 +1,14 @@
 package com.example.dskrundz.buzzerapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /*
 The main entry point into the app, allows for navigation to different screens
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

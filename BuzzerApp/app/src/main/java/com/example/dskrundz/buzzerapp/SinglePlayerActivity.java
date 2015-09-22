@@ -1,8 +1,8 @@
 package com.example.dskrundz.buzzerapp;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +14,7 @@ import java.util.Random;
 /*
 Manages the UI and the Game object for the single player game
  */
-public class SinglePlayerActivity extends AppCompatActivity {
+public class SinglePlayerActivity extends Activity {
 	private Handler timingHandler = new Handler();
 	private Runnable startGameRunnable = null;
 	private Runnable gameTriggerRunnable = null;
@@ -29,11 +29,11 @@ public class SinglePlayerActivity extends AppCompatActivity {
 		this.setContentView(R.layout.activity_single_player);
 
 		this.game = new GameManager(
-				(ImageView)this.findViewById(R.id.androidImageView),
-				(TextView)this.findViewById(R.id.waitForRed),
-				(TextView)this.findViewById(R.id.tapGreenText),
-				(TextView)this.findViewById(R.id.scoreTextView),
-				(Button)this.findViewById(R.id.restartButton)
+				                           (ImageView) this.findViewById(R.id.androidImageView),
+				                           (TextView) this.findViewById(R.id.waitForRed),
+				                           (TextView) this.findViewById(R.id.tapGreenText),
+				                           (TextView) this.findViewById(R.id.scoreTextView),
+				                           (Button) this.findViewById(R.id.restartButton)
 		);
 
 		this.startGameRunnable = new Runnable() {
