@@ -119,7 +119,7 @@ public class StatusActivity extends AppCompatActivity {
 	}
 
 	private List<Double> last10(List<Double> list) {
-		List<Double> newList = new ArrayList<>();
+		List<Double> newList = new ArrayList<Double>();
 		for (int i = 0; i < Math.min(10, list.size()); ++i) {
 			newList.add(list.get(list.size() - 1 - i));
 		}
@@ -127,7 +127,7 @@ public class StatusActivity extends AppCompatActivity {
 	}
 
 	private List<Double> last100(List<Double> list) {
-		List<Double> newList = new ArrayList<>();
+		List<Double> newList = new ArrayList<Double>();
 		for (int i = 0; i < Math.min(100, list.size()); ++i) {
 			newList.add(list.get(list.size() - 1 - i));
 		}
@@ -174,7 +174,7 @@ public class StatusActivity extends AppCompatActivity {
 			if (list.size() == 0) {
 				return 0.0;
 			}
-			List<Double> newList = new ArrayList<>();
+			List<Double> newList = new ArrayList<Double>();
 			newList.add(list.get(list.size() / 2));
 			newList.add(list.get(list.size() / 2 - 1));
 			return this.average(newList);

@@ -29,7 +29,7 @@ public class MultiplayerGameActivity extends AppCompatActivity {
 	private ImageView player4ImageView = null;
 
 	private int playerCount = 0;
-	private List<Integer> playersHit = new ArrayList<>();
+	private List<Integer> playersHit = new ArrayList<Integer>();
 
 	private boolean gameRunning = false;
 	private Handler timingHandler = new Handler();

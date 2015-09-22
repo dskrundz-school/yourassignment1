@@ -18,7 +18,7 @@ Holds all of the past data and stuff
 public class DataCenter {
 	private static DataCenter instance = null;
 
-	public List<Double> singlePlayerTimes = new ArrayList<>();
+	public List<Double> singlePlayerTimes = new ArrayList<Double>();
 
 	public int[][] multiplayerBuzzes = {
 			                                   {0, 0},
