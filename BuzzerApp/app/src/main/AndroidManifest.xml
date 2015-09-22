@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ca.skrundz.buzzerapp" >
+    package="com.example.dskrundz.buzzerapp" >
 
     <application
         android:allowBackup="true"
@@ -17,36 +17,32 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SinglePlayerActivity"
-            android:label="@string/title_activity_single_player"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
-        </activity>
-        <activity
             android:name=".MultiplayerActivity"
-            android:label="@string/title_activity_multiplayer"
-            android:parentActivityName=".MainActivity" >
+            android:label="@string/title_activity_multiplayer" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.skrundz.buzzerapp.MainActivity" />
-        </activity>
-        <activity
-            android:name=".StatusActivity"
-            android:label="@string/title_activity_status"
-            android:parentActivityName=".MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.skrundz.buzzerapp.MainActivity" />
+                android:value="com.example.dskrundz.buzzerapp.MainActivity" />
         </activity>
         <activity
             android:name=".MultiplayerGameActivity"
-            android:label="@string/title_activity_multiplayer_game"
-            android:parentActivityName=".MultiplayerActivity" >
+            android:label="@string/title_activity_multiplayer_game" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="ca.skrundz.buzzerapp.MultiplayerActivity" />
+                android:value="com.example.dskrundz.buzzerapp.MultiplayerActivity" />
+        </activity>
+        <activity
+            android:name=".SinglePlayerActivity"
+            android:label="@string/title_activity_single_player" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dskrundz.buzzerapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".StatusActivity"
+            android:label="@string/title_activity_status" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.dskrundz.buzzerapp.MainActivity" />
         </activity>
     </application>
 
